@@ -38,6 +38,7 @@ h5 {
   color: var(--color-header-text);
   text-align: center;
   padding: 4rem 2rem;
+  width: 100%;
 }
 
 .main {
@@ -46,6 +47,7 @@ h5 {
   font-family: var(--font-family-text);
   padding: 2rem 2rem;
   height: 100vh; /* delete this later */
+  width: 100%;
 }
 
 .cards {
@@ -59,5 +61,5 @@ h5 {
   font-family: var(--font-family-text);
   text-align: center;
   padding: 4rem 2rem;
-  width: 100vw;
+  width: 100%;
 }
