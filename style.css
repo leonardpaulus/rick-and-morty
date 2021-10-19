@@ -11,6 +11,7 @@
   --color-main-text: #f5f5f5;
   --color-text-dark: #9c9c9d;
   --color-body-background: #24282f;
+  --color-footer-background: #202329;
   --color-background-card: #3c3e44;
   --color-cta: #ff9800;
   --font-family-headline: 'Raleway', sans-serif;
@@ -20,7 +21,7 @@
 
 body {
   margin: 0;
-  background-color: var(--color-body-background);
+  height: 100vh;
 }
 
 h1,
@@ -40,13 +41,23 @@ h5 {
 }
 
 .main {
-  background-color: var(--color-background-main);
+  background-color: var(--color-body-background);
   color: var(--color-main-text);
   font-family: var(--font-family-text);
   padding: 2rem 2rem;
+  height: 100vh; /* delete this later */
 }
 
 .cards {
   display: grid;
   place-items: center;
+}
+
+.footer {
+  background-color: var(--color-footer-background);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-text);
+  text-align: center;
+  padding: 4rem 2rem;
+  width: 100vw;
 }

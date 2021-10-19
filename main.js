@@ -37,7 +37,19 @@ function createApp() {
     ]
   );
 
-  appElement.append(headerElement, mainElement);
+  const footerElement = createElement(
+    'footer',
+    {
+      className: 'footer',
+    },
+    [
+      createElement('p', {
+        textContent: 'Created by Leo Paulus',
+      }),
+    ]
+  );
+
+  appElement.append(headerElement, mainElement, footerElement);
 }
 
 createApp();
