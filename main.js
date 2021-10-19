@@ -1,6 +1,43 @@
+import { createElement } from './lib/elements';
 import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+function createApp() {
+  const appElement = document.querySelector('#app');
+
+  const headerElement = createElement(
+    'header',
+    {
+      className: 'header',
+    },
+    [
+      createElement('h1', {
+        textContent: 'The Rick and Morty API',
+      }),
+    ]
+  );
+
+  const mainElement = createElement(
+    'main',
+    {
+      className: 'main',
+    },
+    [
+      createElement(
+        'section',
+        {
+          className: 'cards',
+        },
+        [
+          createElement('p', {
+            className: 'maintext',
+            textContent: 'In development...',
+          }),
+        ]
+      ),
+    ]
+  );
+
+  appElement.append(headerElement, mainElement);
+}
+
+createApp();
