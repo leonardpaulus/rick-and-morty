@@ -1,0 +1,42 @@
+
+.card {
+    background: var(--color-background-card);
+    width: 33em;
+    height: 12em;
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    overflow: hidden;
+    margin: 1em;
+}
+
+.image {
+    height: 12em;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: .6rem;
+}
+
+.textDiv {
+    height: 100%;
+    display: grid;
+    align-items: center;
+    margin: .2rem 0rem;
+}
+
+.characterName {
+    font-size: 1.5rem;
+}
+
+.heading {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+.text {
+    font-size: 1.1rem;
+}

@@ -1,4 +1,5 @@
 import { createElement } from './lib/elements';
+import createCharacterCard from './components/characterCard';
 import './style.css';
 
 function createApp() {
@@ -28,9 +29,19 @@ function createApp() {
           className: 'cards',
         },
         [
-          createElement('p', {
-            className: 'maintext',
-            textContent: 'In development...',
+          createCharacterCard({
+            image: 'https://rickandmortyapi.com/api/character/avatar/165.jpeg',
+            name: 'Rick',
+            status: 'Alive',
+            location: 'Mars',
+            appearance: 'The Ricklantis Mixup',
+          }),
+          createCharacterCard({
+            image: 'https://rickandmortyapi.com/api/character/avatar/200.jpeg',
+            name: 'Morty',
+            status: 'Dead',
+            location: 'Earth',
+            appearance: 'Pilot',
           }),
         ]
       ),
