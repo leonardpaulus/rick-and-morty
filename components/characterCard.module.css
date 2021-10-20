@@ -1,13 +1,18 @@
 
 .card {
     background: var(--color-background-card);
-    width: 33em;
-    height: 12em;
+    width: 33rem;
+    height: 12rem;
     border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: 40% 60%;
     overflow: hidden;
-    margin: 1em;
+    margin: 1rem;
+}
+
+.imageDiv {
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .image {
