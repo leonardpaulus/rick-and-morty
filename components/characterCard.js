@@ -15,12 +15,20 @@ export default function createCharacterCard({
     },
     [
       createElement(
-        'img',
+        'div',
         {
-          className: styles.image,
-          src: image,
+          className: styles.imageDiv,
         },
-        []
+        [
+          createElement(
+            'img',
+            {
+              className: styles.image,
+              src: image,
+            },
+            []
+          ),
+        ]
       ),
       createElement('div', { className: styles.textWrapper }, [
         createElement('div', { className: styles.textDiv }, [
