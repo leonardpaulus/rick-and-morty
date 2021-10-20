@@ -25,20 +25,24 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5 {
+h2 {
   font-family: var(--font-family-headline);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+  margin: 0em;
+}
 
 .header {
   background-color: #fff;
   color: var(--color-header-text);
   text-align: center;
   padding: 4rem 2rem;
-  width: 100%;
 }
 
 .main {
@@ -47,12 +51,12 @@ h5 {
   font-family: var(--font-family-text);
   padding: 2rem 2rem;
   height: 100vh; /* delete this later */
-  width: 100%;
 }
 
 .cards {
   display: grid;
   place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(35em, 1fr));
 }
 
 .footer {
@@ -61,5 +65,4 @@ h5 {
   font-family: var(--font-family-text);
   text-align: center;
   padding: 4rem 2rem;
-  width: 100%;
 }
