@@ -5,8 +5,9 @@ export default function createCharacterCard({
   image,
   name,
   status,
+  species,
   location,
-  appearance,
+  origin,
 }) {
   const characterCard = createElement(
     'article',
@@ -38,7 +39,7 @@ export default function createCharacterCard({
           }),
           createElement('p', {
             className: styles.status,
-            textContent: status,
+            textContent: `${status} - ${species}`,
           }),
         ]),
         createElement('div', { className: styles.textDiv }, [
@@ -48,7 +49,7 @@ export default function createCharacterCard({
           }),
           createElement('p', {
             className: styles.text,
-            textContent: location,
+            textContent: origin.name,
           }),
         ]),
         createElement('div', { className: styles.textDiv }, [
@@ -58,7 +59,7 @@ export default function createCharacterCard({
           }),
           createElement('p', {
             className: styles.text,
-            textContent: appearance,
+            textContent: location.name,
           }),
         ]),
       ]),
