@@ -1,17 +1,10 @@
 import { createElement } from './lib/elements';
 import createCharacterCard from './components/characterCard';
+import { fetchCharacters } from './components/fetchCharacters';
 import './style.css';
 
 async function createApp() {
   const appElement = document.querySelector('#app');
-
-  const randomPage = Math.floor(Math.random() * 34) + 1;
-  console.log(randomPage);
-  const url = 'https://rickandmortyapi.com/api/character?page=';
-
-  const response = await fetch(url + randomPage);
-  const body = await response.json();
-  const characters = body.results;
 
   const headerElement = createElement(
     'header',
@@ -23,6 +16,10 @@ async function createApp() {
         textContent: 'The Rick and Morty API',
       }),
     ]
+  );
+
+  const characters = await fetchCharacters(
+    'https://rickandmortyapi.com/api/character?page='
   );
 
   const characterCards = characters.map((character) =>
