@@ -24,24 +24,7 @@ async function createApp() {
       }),
     ]
   );
-  /* 
-  const characters = [
-    {
-      image: 'https://rickandmortyapi.com/api/character/avatar/165.jpeg',
-      name: 'Rick',
-      status: 'Alive',
-      location: 'Mars',
-      appearance: 'The Ricklantis Mixup',
-    },
-    {
-      image: 'https://rickandmortyapi.com/api/character/avatar/200.jpeg',
-      name: 'Morty',
-      status: 'Dead',
-      location: 'Earth',
-      appearance: 'Pilot',
-    },
-  ];
-*/
+
   const characterCards = characters.map((character) =>
     createCharacterCard(character)
   );

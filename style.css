@@ -55,7 +55,7 @@ p {
 .cards {
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(35em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(39em, 1fr));
 }
 
 .footer {

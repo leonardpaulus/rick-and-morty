@@ -1,7 +1,7 @@
 
 .card {
     background: var(--color-background-card);
-    width: 35rem;
+    width: 37rem;
     height: 14rem;
     border-radius: var(--border-radius);
     display: grid;
@@ -44,8 +44,4 @@
 
 .text {
     font-size: 1.1rem;
-}
-
-.Dead {
-    color: red;
 }
