@@ -1,6 +1,7 @@
 import { createElement } from './lib/elements';
 import createCharacterCard from './components/characterCard';
 import { fetchCharacters } from './components/fetchCharacters';
+import { createSearchBar } from './components/searchBar';
 import './style.css';
 
 async function createApp() {
@@ -17,6 +18,10 @@ async function createApp() {
       }),
     ]
   );
+
+  const searchBar = createSearchBar(function (searchTerm) {
+    console.log(searchTerm);
+  });
 
   const characters = await fetchCharacters(
     'https://rickandmortyapi.com/api/character?page='
@@ -54,7 +59,7 @@ async function createApp() {
     ]
   );
 
-  appElement.append(headerElement, mainElement, footerElement);
+  appElement.append(headerElement, searchBar, mainElement, footerElement);
 }
 
 createApp();

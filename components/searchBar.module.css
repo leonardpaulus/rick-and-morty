@@ -1,0 +1,28 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    column-gap: 1em;
+}
+
+.searchInput {
+    width: 20em;
+    height: 3em;
+    border:2px solid;
+    border-radius: var(--border-radius);
+    border-color: var(--color-background-card);
+    padding-left: 1em;
+}
+
+.searchInput::placeholder {
+    color: var(--color-text-dark);
+}
+
+.searchButton {
+    height: 3em;
+    width: 4em;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-background-card);
+}
