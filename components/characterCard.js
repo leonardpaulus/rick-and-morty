@@ -5,9 +5,17 @@ export default function createCharacterCard({
   image,
   name,
   status,
-  location,
-  appearance,
+  species,
+  episode,
+  origin,
 }) {
+  const firstEpisodeElement = createElement('p', {
+    className: styles.text,
+    textContent: 'Loading...',
+  });
+
+  const firstEpisode = episode[0];
+
   const characterCard = createElement(
     'article',
     {
@@ -38,7 +46,7 @@ export default function createCharacterCard({
           }),
           createElement('p', {
             className: styles.status,
-            textContent: status,
+            textContent: `${status} - ${species}`,
           }),
         ]),
         createElement('div', { className: styles.textDiv }, [
@@ -48,7 +56,7 @@ export default function createCharacterCard({
           }),
           createElement('p', {
             className: styles.text,
-            textContent: location,
+            textContent: origin.name,
           }),
         ]),
         createElement('div', { className: styles.textDiv }, [
@@ -56,13 +64,17 @@ export default function createCharacterCard({
             className: styles.heading,
             textContent: 'First seen in:',
           }),
-          createElement('p', {
-            className: styles.text,
-            textContent: appearance,
-          }),
+          firstEpisodeElement,
         ]),
       ]),
     ]
   );
+
+  fetch(firstEpisode)
+    .then((response) => response.json())
+    .then((body) => {
+      firstEpisodeElement.textContent = body.name;
+    });
+
   return characterCard;
 }

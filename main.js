@@ -2,8 +2,16 @@ import { createElement } from './lib/elements';
 import createCharacterCard from './components/characterCard';
 import './style.css';
 
-function createApp() {
+async function createApp() {
   const appElement = document.querySelector('#app');
+
+  const randomPage = Math.floor(Math.random() * 34) + 1;
+  console.log(randomPage);
+  const url = 'https://rickandmortyapi.com/api/character?page=';
+
+  const response = await fetch(url + randomPage);
+  const body = await response.json();
+  const characters = body.results;
 
   const headerElement = createElement(
     'header',
@@ -17,6 +25,10 @@ function createApp() {
     ]
   );
 
+  const characterCards = characters.map((character) =>
+    createCharacterCard(character)
+  );
+
   const mainElement = createElement(
     'main',
     {
@@ -28,22 +40,7 @@ function createApp() {
         {
           className: 'cards',
         },
-        [
-          createCharacterCard({
-            image: 'https://rickandmortyapi.com/api/character/avatar/165.jpeg',
-            name: 'Rick',
-            status: 'Alive',
-            location: 'Mars',
-            appearance: 'The Ricklantis Mixup',
-          }),
-          createCharacterCard({
-            image: 'https://rickandmortyapi.com/api/character/avatar/200.jpeg',
-            name: 'Morty',
-            status: 'Dead',
-            location: 'Earth',
-            appearance: 'Pilot',
-          }),
-        ]
+        characterCards
       ),
     ]
   );

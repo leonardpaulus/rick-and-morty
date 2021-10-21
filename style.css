@@ -34,8 +34,8 @@ h2,
 h3,
 h4,
 h5,
-p{
-  margin: 0em;
+p {
+  margin: 0;
 }
 
 .header {
@@ -50,13 +50,12 @@ p{
   color: var(--color-main-text);
   font-family: var(--font-family-text);
   padding: 2rem 2rem;
-  height: 100vh; /* delete this later */
 }
 
 .cards {
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(35em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(39em, 1fr));
 }
 
 .footer {

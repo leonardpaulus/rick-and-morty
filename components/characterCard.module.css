@@ -1,8 +1,8 @@
 
 .card {
     background: var(--color-background-card);
-    width: 33rem;
-    height: 12rem;
+    width: 37rem;
+    height: 14rem;
     border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: 40% 60%;
@@ -16,21 +16,21 @@
 }
 
 .image {
-    height: 12em;
+    height: 14em;
 }
 
 .textWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: .6rem;
+    padding: 0.6rem;
 }
 
 .textDiv {
     height: 100%;
     display: grid;
     align-items: center;
-    margin: .2rem 0rem;
+    margin: 0.2rem 0;
 }
 
 .characterName {
