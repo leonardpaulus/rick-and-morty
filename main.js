@@ -19,12 +19,20 @@ async function createApp() {
     ]
   );
 
-  const searchBar = createSearchBar(function (searchTerm) {
-    console.log(searchTerm);
-  });
+  const searchBar = createSearchBar(handleSubmit);
+
+  async function handleSubmit(searchQuery) {
+    const url = 'https://rickandmortyapi.com/api/character/?name=';
+    const charactersSearch = await fetchCharacters(url + searchQuery);
+    const searchCards = charactersSearch.map((characterSearch) =>
+      createCharacterCard(characterSearch)
+    );
+    mainElement.innerHTML = '';
+    mainElement.prepend(...searchCards);
+  }
 
   const characters = await fetchCharacters(
-    'https://rickandmortyapi.com/api/character?page='
+    'https://rickandmortyapi.com/api/character'
   );
 
   const characterCards = characters.map((character) =>
